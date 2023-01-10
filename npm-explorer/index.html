@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="https://nikita.tk" />
+  <meta name="keywords" content="npm,package,content,explorer,file,browser,manager,viewer" />
+  <meta name="description" content="NPM package file manager" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>NPM Explorer</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+</head>
+
+<body>
+  <div id="root">
+    <div class="central">
+      <div>
+        <form id="welcome-form">
+          <h1><img src="img/favicon.png" /> NPM Explorer</h1>
+          <h3>Find out what files are in the NPM package</h3>
+          <input name="package-name" placeholder="Package name" />
+        </form>
+      </div>
+    </div>
+    <div class="author">
+      By <a href="https://nikita.tk" target="_blank">Nikita Savchenko</a><br />
+      <a href="https://github.com/ZitRos/npm-explorer" target="_blank">source code</a>
+    </div>
+    <script type="module" src="./src/main.tsx"></script>
+  </div>
+</body>
+
+</html>

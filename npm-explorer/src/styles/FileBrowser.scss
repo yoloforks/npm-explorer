@@ -1,0 +1,19 @@
+$headHight: 22px;
+
+.file-browser {
+  white-space: pre;
+  font-family: monospace;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+
+  > .header {
+    height: $headHight;
+    font-size: 18px;
+  }
+
+  #editor {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

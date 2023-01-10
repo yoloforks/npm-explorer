@@ -1,0 +1,65 @@
+@import 'const';
+
+$iconMargin: 2px;
+$square: $sizeSmall + $iconMargin * 2;
+
+.layout .dir-path {
+  font-family: monospace;
+  line-height: $square;
+  margin-left: $iconMargin;
+}
+
+.file-tree {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+  > .item {
+    display: block;
+    padding: 0;
+    margin: 0;
+
+    > .head {
+      cursor: pointer;
+      overflow: hidden;
+      white-space: pre;
+      @include transition($defaultTransition);
+
+      &.selected {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      > .icon {
+        width: $sizeSmall;
+        height: $sizeSmall;
+        float: left;
+        margin: $iconMargin;
+      }
+
+      > .size {
+        float: right;
+        line-height: $square;
+        font-size: 12px;
+        padding-right: 3px;
+      }
+
+      > .name {
+        line-height: $square;
+        margin-left: $square;
+        margin-right: 55px;
+      }
+
+      &:hover {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    > .file-tree {
+      margin-left: $square;
+    }
+  }
+}

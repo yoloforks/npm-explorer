@@ -1,0 +1,139 @@
+$dp: 3px;
+$hh: 34px;
+
+.layout {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  > .header {
+    height: $hh;
+    padding: $dp;
+    box-sizing: border-box;
+
+    > .logo-container {
+      display: inline-block;
+      float: left;
+      text-decoration: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      height: $hh - $dp;
+
+      > .logo {
+        height: $hh - $dp;
+      }
+    }
+
+    > .top {
+      white-space: pre;
+      margin-left: $hh;
+
+      > .name {
+        font-weight: bold;
+      }
+    }
+
+    > .body {
+      font-size: 12px;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-left: $hh;
+
+      > .size {
+        font-weight: bold;
+      }
+
+      > .desc {
+        color: #777;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  > .col1,
+  > .col2 {
+    height: 100%;
+    height: calc(100% - #{$hh});
+  }
+
+  > .col1 {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+
+  > .col2 {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    $h: 24px;
+
+    > .file-browser {
+      height: calc(100% - #{$h});
+      box-sizing: border-box;
+    }
+
+    > .head {
+      padding-left: $dp;
+      box-sizing: border-box;
+      height: $h;
+      overflow: hidden;
+      position: relative;
+
+      > .close-button {
+        display: none;
+        float: right;
+        z-index: 999;
+        text-align: right;
+        padding: $dp;
+        font-weight: bold;
+        text-decoration: underline;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+        &:before {
+          content: 'Close';
+        }
+      }
+
+      > .file-name {
+        font-weight: bold;
+        padding: $dp $dp $dp 0;
+      }
+    }
+  }
+
+  &.layout-desktop {
+    > .col1 {
+      float: left;
+      width: 300px;
+    }
+
+    > .col2 {
+      margin-left: 300px;
+    }
+  }
+
+  &.layout-mobile {
+    > .col2 {
+      display: none;
+    }
+
+    &.file-selected {
+      > .col1 {
+        display: none;
+      }
+
+      > .col2 {
+        display: block;
+
+        > .head > .close-button {
+          display: block;
+        }
+      }
+    }
+  }
+}
